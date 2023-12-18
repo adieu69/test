@@ -5,44 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>School ERP Login</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f4f4f4;
-    }
-    form {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
-    input[type="text"],
-    input[type="password"],
-    input[type="submit"] {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-    input[type="submit"] {
-      background-color: #007bff;
-      color: #fff;
-      cursor: pointer;
-    }
-    input[type="submit"]:hover {
-      background-color: #0056b3;
-    }
+    /* Add your CSS styles here */
   </style>
 </head>
 <body>
-  <form action="your_validation_script.php" method="post">
+  <form id="loginForm" action="your_validation_script.php" method="post">
     <h2>School ERP Login</h2>
     <label for="username">Username</label>
     <input type="text" id="username" name="username" required>
@@ -50,5 +17,24 @@
     <input type="password" id="password" name="password" required>
     <input type="submit" value="Login">
   </form>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      // Simulating successful login
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Perform validation and authentication here using AJAX or other means
+
+      // For demonstration purposes, redirect to personal details page if login is successful
+      if (username === 'student' && password === 'password') {
+        event.preventDefault(); // Prevent the form from submitting
+        window.location.href = 'personal_details.html'; // Redirect to personal details page
+      } else {
+        // Handle incorrect login credentials
+        alert('Incorrect username or password. Please try again.');
+      }
+    });
+  </script>
 </body>
 </html>
